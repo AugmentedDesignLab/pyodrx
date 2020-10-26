@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <OpenDRIVE>
-	<header date="2020-10-26 11:44:41.279608" east="0.0" name="myroad" north="0.0" revMajor="1" revMinor="5" south="0.0" west="0.0"/>
+	<header date="2020-10-26 13:14:11.103195" east="0.0" name="myroad" north="0.0" revMajor="1" revMinor="5" south="0.0" west="0.0"/>
 	<road id="0" junction="-1" length="100">
 		<link>
 			<successor elementId="1" elementType="junction"/>
@@ -53,7 +53,7 @@
 			<predecessor elementId="1" elementType="junction"/>
 		</link>
 		<planView>
-			<geometry hdg="-1.0471975567816514" length="100" s="0" x="111.24012390652777" y="-6.489488605009682">
+			<geometry hdg="-2.3561945027587154" length="100" s="0" x="108.02888467081229" y="-19.383442607477924">
 				<line/>
 			</geometry>
 		</planView>
@@ -100,7 +100,7 @@
 			<predecessor elementId="1" elementType="junction"/>
 		</link>
 		<planView>
-			<geometry hdg="1.047197556781651" length="100" s="0" x="111.24012390652777" y="6.489488605009678">
+			<geometry hdg="-1.570796335172477" length="100" s="0" x="112.5127835198399" y="-12.512783624666744">
 				<line/>
 			</geometry>
 		</planView>
@@ -142,19 +142,19 @@
 			</laneSection>
 		</lanes>
 	</road>
-	<road id="100" junction="1" length="13.962634015954638">
+	<road id="100" junction="1" length="31.41592653589793">
 		<link>
 			<predecessor contactPoint="end" elementId="0" elementType="road"/>
 			<successor contactPoint="start" elementId="1" elementType="road"/>
 		</link>
 		<planView>
-			<geometry hdg="0" length="5.585053606381855" s="0" x="100.0" y="0.0">
+			<geometry hdg="0" length="12.566370614359172" s="0" x="100.0" y="0.0">
 				<spiral curvEnd="-0.125" curvStart="-1e-09"/>
 			</geometry>
-			<geometry hdg="-0.3490658531913927" length="2.7925268031909276" s="5.585053606381855" x="105.51738422905107" y="-0.644216507267585">
+			<geometry hdg="-0.7853981696806336" length="6.283185307179586" s="12.566370614359172" x="111.81303804186113" y="-3.1477287617072456">
 				<arc curvature="-0.125"/>
 			</geometry>
-			<geometry hdg="-0.6981317035902587" length="5.585053606381855" s="8.377580409572783" x="107.9235239560587" y="-2.033401935322237">
+			<geometry hdg="-1.5707963330780819" length="12.566370614359172" s="18.84955592153876" x="114.15618375682568" y="-8.804583025922044">
 				<spiral curvEnd="-1e-09" curvStart="-0.125"/>
 			</geometry>
 		</planView>
@@ -202,20 +202,20 @@
 			</laneSection>
 		</lanes>
 	</road>
-	<road id="101" junction="1" length="13.962634015954631">
+	<road id="101" junction="1" length="20.94395102393195">
 		<link>
 			<predecessor contactPoint="end" elementId="0" elementType="road"/>
 			<successor contactPoint="start" elementId="2" elementType="road"/>
 		</link>
 		<planView>
-			<geometry hdg="0" length="5.5850536063818526" s="0" x="100.0" y="0.0">
-				<spiral curvEnd="0.125" curvStart="1e-09"/>
+			<geometry hdg="0" length="8.377580409572781" s="0" x="100.0" y="0.0">
+				<spiral curvEnd="-0.125" curvStart="-1e-09"/>
 			</geometry>
-			<geometry hdg="0.34906585319139255" length="2.7925268031909263" s="5.5850536063818526" x="105.51738422905107" y="0.6442165072675844">
-				<arc curvature="0.125"/>
+			<geometry hdg="-0.523598779787089" length="4.1887902047863905" s="8.377580409572781" x="108.1508010458762" y="-1.4337793242378103">
+				<arc curvature="-0.125"/>
 			</geometry>
-			<geometry hdg="0.6981317035902583" length="5.5850536063818526" s="8.37758040957278" x="107.9235239560587" y="2.033401935322236">
-				<spiral curvEnd="1e-09" curvStart="0.125"/>
+			<geometry hdg="-1.0471975553853878" length="8.377580409572781" s="12.566370614359172" x="111.07900426388608" y="-4.3619825667789485">
+				<spiral curvEnd="-1e-09" curvStart="-0.125"/>
 			</geometry>
 		</planView>
 		<lanes>
@@ -262,19 +262,19 @@
 			</laneSection>
 		</lanes>
 	</road>
-	<road id="102" junction="1" length="13.962634015954638">
+	<road id="102" junction="1" length="31.41592653589793">
 		<link>
 			<predecessor contactPoint="start" elementId="1" elementType="road"/>
 			<successor contactPoint="start" elementId="2" elementType="road"/>
 		</link>
 		<planView>
-			<geometry hdg="2.0943950968081415" length="5.585053606381855" s="0" x="111.24012390652777" y="-6.489488605009682">
+			<geometry hdg="0.7853981508310777" length="12.566370614359172" s="0" x="108.02888467081229" y="-19.383442607477924">
 				<spiral curvEnd="-0.125" curvStart="-1e-09"/>
 			</geometry>
-			<geometry hdg="1.745329243616749" length="2.7925268031909276" s="5.585053606381855" x="109.03933968131871" y="-1.389185434286543">
+			<geometry hdg="-1.884955591613391e-08" length="6.283185307179586" s="12.566370614359172" x="118.60774440636399" y="-13.256143787340264">
 				<arc curvature="-0.125"/>
 			</geometry>
-			<geometry hdg="1.396263393217883" length="5.585053606381855" s="8.377580409572783" x="109.03933970459474" y="1.3891854083843427">
+			<geometry hdg="-0.7853981822470042" length="12.566370614359172" s="18.84955592153876" x="124.26459861168911" y="-15.599289644477075">
 				<spiral curvEnd="-1e-09" curvStart="-0.125"/>
 			</geometry>
 		</planView>

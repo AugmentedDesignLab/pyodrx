@@ -1,0 +1,11 @@
+Road1:
+  lanes: 2
+  angle: 0
+
+Road2:
+  lanes: 2
+  angle: 45
+
+Road3:
+  lanes: 2
+  angle: 90
