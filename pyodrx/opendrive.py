@@ -11,14 +11,14 @@ import numpy as np
 
 class _Header():
     """ Header creates the header of the OpenDrive file
-        
+
         Parameters
         ----------
-            name (str): name of the road 
+            name (str): name of the road
 
         Attributes
         ----------
-            name (str): name of the scenario 
+            name (str): name of the scenario
 
         Methods
         -------
@@ -34,11 +34,11 @@ class _Header():
 
          Parameters
         ----------
-            name (str): name of the road 
+            name (str): name of the road
         """
         self.name = name
 
-        
+
 
     def get_attributes(self):
         """ returns the attributes as a dict of the FileHeader
@@ -66,7 +66,7 @@ class _Header():
 
 class Road():
     """ Road defines the road element of OpenDrive
-        
+
         Parameters
         ----------
             road_id (int): identifier of the road
@@ -107,7 +107,7 @@ class Road():
 
             write_xml(filename)
                 write a open scenario xml
-                
+
     """
     def __init__(self,road_id,planview,lanes, road_type = -1,name=None, rule=None):
         """ initalize the Road
@@ -141,7 +141,7 @@ class Road():
         self.adjusted = False
     def add_successor(self,element_type,element_id,contact_point=None):
         """ add_successor adds a successor link to the road
-        
+
         Parameters
         ----------
             element_type (ElementType): type of element the linked road
@@ -159,7 +159,7 @@ class Road():
 
     def add_predecessor(self,element_type,element_id,contact_point=None):
         """ add_successor adds a successor link to the road
-        
+
         Parameters
         ----------
             element_type (ElementType): type of element the linked road
@@ -173,23 +173,23 @@ class Road():
             raise ValueError('only one predecessor is allowed')
         self.predecessor = _Link('predecessor',element_id,element_type,contact_point)
         self.links.add_link(self.predecessor)
-        
 
-    def add_neighbor(self,element_type,element_id,direction): 
+
+    def add_neighbor(self,element_type,element_id,direction):
         """ add_neighbor adds a neighbor to a road
-        
+
         Parameters
         ----------
             element_type (ElementType): type of element the linked road
 
             element_id (str/int): name of the linked road
 
-            direction (Direction): the direction of the link 
+            direction (Direction): the direction of the link
         """
         if self._neighbor_added > 1:
             raise ValueError('only two neighbors are allowed')
         suc = _Link('neighbor',element_id,element_type,direction=direction)
-    
+
         self.links.add_link(suc)
         self._neighbor_added += 1
     def get_end_point(self):
@@ -225,12 +225,12 @@ class Road():
         element.append(self.links.get_element())
         element.append(self.planview.get_element())
         element.append(self.lanes.get_element())
-        
+
         return element
 
 class OpenDrive():
     """ OpenDrive is the main class of the pyodrx to generate an OpenDrive road
-        
+
         Parameters
         ----------
             name (str): name of the road
@@ -239,7 +239,7 @@ class OpenDrive():
         ----------
             name (str): name of the road
 
-            roads (list of Road): all roads 
+            roads (list of Road): all roads
 
             junctions (list of Junction): all junctions
 
@@ -256,14 +256,14 @@ class OpenDrive():
 
             write_xml(filename)
                 write a open scenario xml
-                
+
     """
     def __init__(self,name):
         """ Initalize the Header
 
             Parameters
             ----------
-            name (str): name of the road 
+            name (str): name of the road
 
         """
         self.name = name
@@ -277,46 +277,46 @@ class OpenDrive():
 
             Parameters
             ----------
-                road (Road): the road to add 
+                road (Road): the road to add
 
         """
         if (len(self.roads) == 0) and road.predecessor:
             ValueError('No road was added and the added road has a predecessor, please add the predecessor first')
 
-        self.roads[str(road.id)] = road        
+        self.roads[str(road.id)] = road
 
-    def adjust_roads_and_lanes(self): 
-        """ Adjust starting position of all geoemtries of all roads and try to link lanes in neightbouring roads 
+    def adjust_roads_and_lanes(self):
+        """ Adjust starting position of all geoemtries of all roads and try to link lanes in neightbouring roads
 
             Parameters
             ----------
 
         """
-        #adjust roads and their geometries 
+        #adjust roads and their geometries
         self.adjust_startpoints()
 
         results = list(combinations(self.roads, 2))
 
         for r in range(len(results)):
             print('analizing roads', results[r][0], results[r][1] )
-            create_lane_links(self.roads[results[r][0]],self.roads[results[r][1]])  
+            create_lane_links(self.roads[results[r][0]],self.roads[results[r][1]])
 
 
-    def adjust_road_wrt_neightbour(self, road_id, neightbour_id, contact_point, neightbour_type): 
-        """ Adjust geometries of road[road_id] taking as a successor/predecessor the neightbouring road with id neightbour_id. 
-            NB Passing the type of contact_point is necessary because we call this function also on roads connecting to 
+    def adjust_road_wrt_neightbour(self, road_id, neightbour_id, contact_point, neightbour_type):
+        """ Adjust geometries of road[road_id] taking as a successor/predecessor the neightbouring road with id neightbour_id.
+            NB Passing the type of contact_point is necessary because we call this function also on roads connecting to
             to a junction road (which means that the road itself do not know the contact point of the junction road it connects to)
 
 
             Parameters
             ----------
-            road_id (int): id of the road we want to adjust 
+            road_id (int): id of the road we want to adjust
 
             neightbour_id(int): id of the neightbour road we take as reference (we suppose the neightbour road is already adjusted)
 
             contact_point(ContactPoint): type of contact point with point of view of roads[road_id]
-            
-            neightbour_type(str): 'successor'/'predecessor' type of linking to the neightbouring road 
+
+            neightbour_type(str): 'successor'/'predecessor' type of linking to the neightbouring road
 
 
         """
@@ -325,9 +325,9 @@ class OpenDrive():
 
         if neightbour_type == 'predecessor':
 
-            if contact_point == ContactPoint.start :    
+            if contact_point == ContactPoint.start :
                 x,y,h = self.roads[str(neightbour_id)].planview.get_start_point()
-                h = h + np.pi #we are attached to the predecessor's start, so road[k] will start in its opposite direction 
+                h = h + np.pi #we are attached to the predecessor's start, so road[k] will start in its opposite direction
             elif contact_point == ContactPoint.end:
                 x,y,h = self.roads[str(neightbour_id)].planview.get_end_point()
             main_road.planview.set_start_point(x,y,h)
@@ -335,72 +335,72 @@ class OpenDrive():
 
         elif neightbour_type == 'successor':
 
-            if contact_point == ContactPoint.start:    
+            if contact_point == ContactPoint.start:
                 x,y,h = self.roads[str(neightbour_id)].planview.get_start_point()
             elif contact_point == ContactPoint.end:
                 x,y,h = self.roads[str(neightbour_id)].planview.get_end_point()
             main_road.planview.set_start_point(x,y,h)
-            main_road.planview.adjust_geometires(True)      
+            main_road.planview.adjust_geometires(True)
 
 
-    def adjust_startpoints(self): 
+    def adjust_startpoints(self):
         """ Adjust starting position of all geoemtries of all roads
 
             Parameters
             ----------
 
         """
-        
+
         count_adjusted_roads = 0
 
         while count_adjusted_roads < len(self.roads):
 
-            for k in self.roads: 
+            for k in self.roads:
 
-                if count_adjusted_roads == 0: 
-                    self.roads[k].planview.adjust_geometires() 
+                if count_adjusted_roads == 0:
+                    self.roads[k].planview.adjust_geometires()
                     #print('1 adjusted road ', self.roads[k].id)
                     count_adjusted_roads += 1
                     continue
 
-                if self.roads[k].planview.adjusted is True: 
-                    continue                
+                if self.roads[k].planview.adjusted is True:
+                    continue
 
-                # check if it has a normal predecessor 
-                if self.roads[k].predecessor is not None and self.roads[str(self.roads[k].predecessor.element_id)].planview.adjusted is True and self.roads[k].predecessor.element_type is not ElementType.junction: 
+                # check if it has a normal predecessor
+                if self.roads[k].predecessor is not None and self.roads[str(self.roads[k].predecessor.element_id)].planview.adjusted is True and self.roads[k].predecessor.element_type is not ElementType.junction:
 
                     self.adjust_road_wrt_neightbour(k, self.roads[k].predecessor.element_id, self.roads[k].predecessor.contact_point, 'predecessor')
                     count_adjusted_roads +=1
 
                     if self.roads[k].road_type == 1 and self.roads[k].successor is not None and self.roads[str(self.roads[k].successor.element_id)].planview.adjusted is False:
-                        
+
                         succ_id = self.roads[k].successor.element_id
-                        if self.roads[k].successor.contact_point == ContactPoint.start:   
+                        if self.roads[k].successor.contact_point == ContactPoint.start:
                             self.adjust_road_wrt_neightbour(succ_id, k, ContactPoint.end, 'predecessor')
-                        else: 
+                        else:
                             self.adjust_road_wrt_neightbour(succ_id, k, ContactPoint.end, 'successor')
                         count_adjusted_roads +=1
 
-                    continue 
+                    continue
 
-                # check if geometry has a normal successor 
-                elif self.roads[k].successor is not None and self.roads[str(self.roads[k].successor.element_id)].planview.adjusted is True and self.roads[k].successor.element_type is not ElementType.junction: 
+                # check if geometry has a normal successor
+                elif self.roads[k].successor is not None and self.roads[str(self.roads[k].successor.element_id)].planview.adjusted is True and self.roads[k].successor.element_type is not ElementType.junction:
 
                     self.adjust_road_wrt_neightbour(k, self.roads[k].successor.element_id, self.roads[k].successor.contact_point, 'successor')
                     count_adjusted_roads +=1
 
                     if self.roads[k].road_type == 1 and self.roads[k].predecessor is not None and self.roads[str(self.roads[k].predecessor.element_id)].planview.adjusted is False:
-                        
+
                         pred_id = self.roads[k].predecessor.element_id
-                        if self.roads[k].predecessor.contact_point == ContactPoint.start:   
+                        if self.roads[k].predecessor.contact_point == ContactPoint.start:
                             self.adjust_road_wrt_neightbour(pred_id,k, ContactPoint.start, 'predecessor')
-                        else: 
+                        else:
                             self.adjust_road_wrt_neightbour(pred_id,k, ContactPoint.start, 'successor')
                         count_adjusted_roads +=1
 
                     continue
 
-    
+
     def add_junction(self,junction):
         """ Adds a junction to the opendrive
 
@@ -419,7 +419,7 @@ class OpenDrive():
         element.append(self._header.get_element())
         for r in self.roads:
             element.append(self.roads[r].get_element())
-    
+
         for j in self.junctions:
             element.append(j.get_element())
 
@@ -441,4 +441,3 @@ class OpenDrive():
         if filename == None:
             filename = self.name + '.xodr'
         printToFile(self.get_element(),filename,prettyprint)
-        

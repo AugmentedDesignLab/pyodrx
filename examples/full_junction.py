@@ -1,22 +1,25 @@
 import numpy as np
 import os
-
 import pyodrx
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("incoming", help="number of incoming roads to the intersection", type=int)
+args = parser.parse_args()
 
 
-
-    
 roads = []
-numintersections = 4 # 3 or 4
+numintersections = args.incoming # 3 or 4
 angles = []
 for i in range(numintersections):
     roads.append(pyodrx.create_straight_road(i))
-    # use this instead to change the number of lanes in the crossing 
+    # use this instead to change the number of lanes in the crossing
     #roads.append(pyodrx.generators.create_straight_road(i, length=100, junction=-1, n_lanes=2, lane_offset=3))
-    angles.append(i * 2*np.pi/numintersections)
+    #angles.append(i * 2*np.pi/numintersections)
+
 
 # use this for a T-crossing instead
-# angles = [0,np.pi/2, 3*np.pi/2]
+angles = [0,np.pi/2, 3*np.pi/2]
 
 print(roads)
 junc = pyodrx.create_junction_roads(roads,angles,8)
@@ -32,4 +35,5 @@ for j in junc:
 
 odr.adjust_roads_and_lanes()
 
-pyodrx.run_road(odr,os.path.join('..','pyoscx','esmini')) 
+#pyodrx.run_road(odr,os.path.join('..','pyoscx','esmini'))
+pyodrx.run_road(odr,os.path.join('..','pyoscx','esmini'))

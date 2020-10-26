@@ -1,0 +1,64 @@
+esmini GIT REV: 1279b2e
+esmini GIT TAG: 
+esmini GIT BRANCH: master
+esmini BUILD VERSION: N/A - client build
+viewer.cpp / 605 / Viewer(): Scenario file missing, using OpenDRIVE directory, ../pyoscx/esmini/resources/xodr, as pivot for model relative file paths
+viewer.cpp / 624 / Viewer(): Anti-Aliasing number of subsamples: 4
+viewer.cpp / 1471 / AddEnvironment(): AddEnvironment: No environment 3D model specified (.//./) - go ahead without
+
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 0 (road id 0 s 10.00 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 5 to road nr 0 (road id 0 s 17.55 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model van_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 0 (road id 0 s 31.92 lane id -1), 
+main.cpp / 126 / SetupCars(): Adding car of model 3 to road nr 0 (road id 0 s 39.71 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 3 to road nr 0 (road id 0 s 54.45 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 4 to road nr 0 (road id 0 s 61.47 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model truck_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 0 (road id 0 s 68.58 lane id 1), 
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 0 (road id 0 s 75.38 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 6 to road nr 0 (road id 0 s 83.31 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model bus_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 5 to road nr 0 (road id 0 s 90.67 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model van_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 1 to road nr 1 (road id 1 s 10.00 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 5 to road nr 1 (road id 1 s 17.50 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model van_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 6 to road nr 1 (road id 1 s 24.43 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model bus_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 1 to road nr 1 (road id 1 s 31.87 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 5 to road nr 1 (road id 1 s 38.63 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model van_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 1 (road id 1 s 46.00 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 1 (road id 1 s 53.99 lane id 1), 
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 1 (road id 1 s 75.69 lane id 1), 
+main.cpp / 126 / SetupCars(): Adding car of model 5 to road nr 1 (road id 1 s 83.22 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model van_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 4 to road nr 1 (road id 1 s 90.55 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model truck_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 2 (road id 2 s 10.00 lane id 1), 
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 2 (road id 2 s 17.74 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 0 to road nr 2 (road id 2 s 24.85 lane id -1), 
+main.cpp / 126 / SetupCars(): Adding car of model 1 to road nr 2 (road id 2 s 32.13 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 2 (road id 2 s 39.29 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 1 to road nr 2 (road id 2 s 47.21 lane id -1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 3 to road nr 2 (road id 2 s 54.83 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 6 to road nr 2 (road id 2 s 62.79 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model bus_blue.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 2 to road nr 2 (road id 2 s 70.76 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model car_red.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 4 to road nr 2 (road id 2 s 85.98 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model truck_yellow.osgb. No problem, wheels will just not appear to roll or steer
+main.cpp / 126 / SetupCars(): Adding car of model 6 to road nr 2 (road id 2 s 92.93 lane id 1), 
+viewer.cpp / 491 / CarModel(): No wheel nodes in model bus_blue.osgb. No problem, wheels will just not appear to roll or steer
