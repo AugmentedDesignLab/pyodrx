@@ -1,1 +1,37 @@
-soidjf
+# road defination for 3 way intersection
+threeWay:
+  - road1:
+    geometry: line
+    angle: 30
+    lane_number: 2
+    direction: bidirectional
+    lane:
+      - direction: +ve
+      - type: driving_lane
+      - turn_lane: true
+    lane:
+      - direction: -ve
+      - type: driving_lane
+      - turn_lane: false
+  - road2:
+    geometry: line
+    angle: 85
+    lane_number: 1
+    direction: one_way
+    lane:
+      - direction: +ve
+      - type: driving_lane
+      - turn_lane: false
+  - road3:
+    geometry: line
+    angle: 120
+    lane_number: 2
+    direction: one_way
+    lane:
+      - direction: +ve
+      - type: driving_lane
+      - turn_lane: false
+    lane:
+      - direction: +ve
+      - type: driving_lane
+      - turn_lane: false
